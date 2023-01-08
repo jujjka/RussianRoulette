@@ -1,0 +1,20 @@
+name: RussianRoulette
+version: 1.0
+main: me.lampy8065.russianroulette.RussianRoulette
+authors: [ lampy8065 ]
+description: Its a fun plugin for players
+
+
+commands:
+  roul:
+    description: This is the command for setting up the lobby , starting the game, etc. 
+      joinLobby - joins a lobby //joinLobby NameLobby
+      leaveLobby - command to leave the lobby
+      removeLobby -removes Lobby //removeLobby NameLobby
+      deleteLobby - deletes your lobby
+      kickPlayerLobby - kicks a player from the lobby //command PlayerName PlayerName
+      createLobby - creates a lobby //command Name MinPlayers MaxPlayers
+      listLobby - shows active lobbies
+      again - starts the game again
+      deletePlayer - clears the lobby of normal players
+
