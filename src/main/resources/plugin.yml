@@ -1,7 +1,7 @@
-name: RussianRoulette
-version: 1.0
+name: RussianRouletteGame
+version: 1.8
 main: me.lampy8065.russianroulette.RussianRoulette
-authors: [ lampy8065 ]
+authors: [ jujjka ]
 description: Its a fun plugin for players
 
 
@@ -17,4 +17,5 @@ commands:
       listLobby - shows active lobbies
       again - starts the game again
       deletePlayer - clears the lobby of normal players
+      Example - /roul createLobby ol 1 2,always at the beginning of the command should be /roul
 

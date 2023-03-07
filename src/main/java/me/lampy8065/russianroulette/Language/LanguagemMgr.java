@@ -16,8 +16,8 @@ public class LanguagemMgr {
     }
 
     public static FileConfiguration getLang(){
-        String lang = Bukkit.getPluginManager().getPlugin("RussianRoulette").getConfig().getString("lang");
-        File file = new File(Bukkit.getPluginManager().getPlugin("RussianRoulette").getDataFolder().getPath(),lang);
+        String lang = Bukkit.getPluginManager().getPlugin("RussianRouletteGame").getConfig().getString("lang");
+        File file = new File(Bukkit.getPluginManager().getPlugin("RussianRouletteGame").getDataFolder().getPath(),lang);
         FileConfiguration config = YamlConfiguration.loadConfiguration(file);
         return config;
     }

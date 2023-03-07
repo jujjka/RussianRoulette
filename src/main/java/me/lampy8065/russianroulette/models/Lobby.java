@@ -6,10 +6,16 @@ import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.sql.SQLException;
 import java.util.*;
+
+import static net.md_5.bungee.api.ChatMessageType.*;
+import static net.md_5.bungee.api.ChatMessageType.ACTION_BAR;
+import static net.md_5.bungee.api.chat.TextComponent.fromLegacyText;
 
 public class Lobby {
 
@@ -17,7 +23,7 @@ public class Lobby {
     public static List<Lobby> lobbyList = new ArrayList<>();
     int startGame = 3;
 
-    public Player Owner;
+    private Player Owner;
 
 
     public static Lobby getLobby(String name){
@@ -46,15 +52,21 @@ public class Lobby {
     public int death;
     public int save;
 
-    public Lobby(String nameLobby, int minPlayers, int maxPlayers) {
+    private Boolean isGame;
+
+
+
+    public Lobby(String nameLobby, int minPlayers, int maxPlayers,Player owner) {
         this.nameLobby = nameLobby;
         this.minPlayers = minPlayers;
         this.maxPlayers = maxPlayers;
+        this.Owner =    owner;
+        this.isGame = false;
     }
-
+    
 
     public static void DeleteLobby(Lobby L){
-        lobbyList.remove(L);
+            lobbyList.remove(L);
     }
     public void JoinLobby(Player player){
         if(playersLobby.size() == maxPlayers){
@@ -62,26 +74,26 @@ public class Lobby {
         }
         else {
             playersLobby.add(player);
-            sendLobbyMessage(player.getDisplayName() + LanguagemMgr.getLang().get("StunMessage.joinLobby"));
+            sendLobbyMessage(String.format(LanguagemMgr.getLang().getString("StunMessage.joinLobby"), player.getDisplayName()));
             if(playersLobby.size() >= minPlayers){
                 startGame();
-        }
-
+            }
         }
     }
 
     public void startGame(){
+        setGame(false);
         startGame = 3;
         new BukkitRunnable(){
 
             @Override
             public void run() {
                 if(startGame > 0){
-                    sendLobbyTittle(LanguagemMgr.getLang().get("StunMessage.GameStart").toString(),LanguagemMgr.getLang().getString("StunMessage.GameStart1")+ startGame);
+                    sendLobbyTittle(LanguagemMgr.getLang().getString("StunMessage.GameStart"),LanguagemMgr.getLang().getString("StunMessage.GameStart1") + startGame);
                     startGame--;
                 }
                 else if (startGame ==0){
-                    sendLobbyTittle(LanguagemMgr.getLang().get("StunMessage.GameStart2").toString(),"");
+                    sendLobbyTittle(LanguagemMgr.getLang().getString("StunMessage.GameStart2"),"");
                     new BukkitRunnable(){
 
                         @Override
@@ -96,13 +108,14 @@ public class Lobby {
         }.runTaskTimer(RussianRoulette.getPlugin(RussianRoulette.class),0,20);
     }
     public void stopGame(){
-        sendBarLobbyMessage(ChatColor.AQUA + LanguagemMgr.getLang().get("StunMessage.GameOver").toString() + ChatColor.GOLD + death + ChatColor.AQUA + LanguagemMgr.getLang().get("StunMessage.PlayerSave") +  ChatColor.GOLD + save);
+        setGame(false);
+        sendBarLobbyMessage(String.format(LanguagemMgr.getLang().getString("StunMessage.GameOver"), death,save));
         save = 0;
         death = 0;
     }
     public void kickLobby(Player player){
         playersLobby.remove(player);
-        sendLobbyMessage(player.getDisplayName() + LanguagemMgr.getLang().get("StunMessage.KickPlayer"));
+        sendLobbyMessage(String.format(LanguagemMgr.getLang().getString("StunMessage.KickPlayer"), player.getDisplayName()));
     }
     public void sendLobbyMessage(String message){
         for (Player player: playersLobby){
@@ -139,5 +152,37 @@ public class Lobby {
 
     public void setNameLobby(String nameLobby) {
         this.nameLobby = nameLobby;
+    }
+
+    public int getMinPlayers() {
+        return minPlayers;
+    }
+
+    public void setMinPlayers(int minPlayers) {
+        this.minPlayers = minPlayers;
+    }
+
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
+
+    public void setMaxPlayers(int maxPlayers) {
+        this.maxPlayers = maxPlayers;
+    }
+
+    public Boolean getGame() {
+        return isGame;
+    }
+
+    public void setGame(Boolean game) {
+        isGame = game;
+    }
+
+    public Player getOwner() {
+        return Owner;
+    }
+
+    public void setOwner(Player owner) {
+        Owner = owner;
     }
 }
