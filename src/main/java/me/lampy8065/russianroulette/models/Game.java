@@ -39,8 +39,8 @@ public class Game {
 
                                     @Override
                                     public void run() {
-                                        MessagerMg.messageAgain(lobby.Owner);
-                                        MessagerMg.messageDelete(lobby.Owner);
+                                        MessagerMg.messageAgain(lobby.getOwner());
+                                        MessagerMg.messageDelete(lobby.getOwner());
                                     }
                                 }.runTaskLater(RussianRoulette.getPlugin(RussianRoulette.class),190);
 
