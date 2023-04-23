@@ -1,0 +1,47 @@
+actionMessage_death: §3не повезло(
+actionMessage_save:  §3Повезло
+
+Messages-report:
+  permission: §4Недостаточно прав!
+  error_input: §4Данные введены неправильно!
+  NotLobby: §4Лобби [%s] не существует
+  NotPlayer: §4Игрока [%s] не существует
+  LobbyHAs: §4Лобби [%s] уже существует!
+  AlwaysHaveLobby: §4Вы уже в лобби
+  PlayerNotLobby: §4Игрок [%s] не состоит лобби
+  NotArg: §4Недостаточно аргументов
+  YouNotLobby: §4Вы не в лобби!
+  MaxMinPlayers: §4Максимальное количество игроков меньше минимального
+  FullLobby: §4Лобби [%s] заполнено
+  notAgainGame: §4Игра еще идет!
+StunMessage:
+  CreateLobby: §3Вы создали лобби с именем - %s
+  ExitLobby: §3Вы вышли из лобби
+  deleteLobby: §3Лобби удалено
+  LobbyRemove: §3Лобби [%s] Удалено
+  RemovePlayer: §3Игрок [%s] удален из лобби
+  KickPlayer: §3Игрок [%s] вышел из лобби
+  ActiveLobbys: '§3Активные лобби: '
+  GameAgain: §3Вы начали игру заново!
+  OwnerClear: §3Вы удалили всех обычных игроков!
+  OwnerClersForPlayer: §3Админ очищает лобби!
+  joinLobby: §3Игрок [%s] присоеденился к лобби
+  GameStart: §3Игра начинается
+  GameStart1: §3осталось до игры
+  GameStart2: §3Игра началась
+  GameOver: §3Игра закончена, по прошествию игры было убито [%s], Выжито [%s]
+  DeathGame: §3Игроку [%s] - выпала пуля из револьера
+  GameSave: §3Игроку [%s] - очень сильно повезло и он остался жив
+  MessageAgain: Чтобы начать игру заново просто нажмите
+  MessageAgain1: Начните игру заново
+  ActiveLobbys1: §3Активных лобби нету
+  RestartMessage: Если вы хотите сбросить лобби, просто нажмите
+  RestartMessage1: §3Удаление всех игроков
+  GameSign: §3Игра идет
+HelpMessage: "§4joinLobby - присоединяет к лобби //joinLobby ИмяЛобби \n§cleaveLobby\
+  \ - команда для того чтобы выйти из лобби \n§6removeLobby - удаляет Лобби //removeLobby\
+  \ ИмяЛобби \n§edeleteLobby - удаляет твое лобби \n§2kickPlayerLobby - кикает игр\
+  ока с лобби //команда Имя Имяигрока \n§acreateLobby - создает лобби //команда Им\
+  я МинИгроков МаксИгроков \n§blistLobby - показывает активные лобби \n§3again - н\
+  ачинает игру заново \n§1deletePlayer - очищает лобби от обычных игроков \n§9Прим\
+  ер /roul createLobby test 1 2\n§4Важно - чтобы перед каждой командой стоял /roul"

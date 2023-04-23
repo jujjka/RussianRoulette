@@ -1,0 +1,42 @@
+Messages-report:
+  permission: §4Not enough rights
+  error_input: §4Data entered incorrectly!
+  NotLobby: §4Lobby [%s] does not exist
+  NotPlayer: §4Player [%s] does not exist
+  LobbyHAs: §4Lobby [%s] already exists!
+  AlwaysHaveLobby: §4You are already in the lobby
+  PlayerNotLobby: §4Player [%s] not in lobby
+  NotArg: §4Not enough arguments
+  YouNotLobby: §4You are not in the lobby
+  MaxMinPlayers: §4The maximum number of players is less than the minimum
+  FullLobby: §4The lobby [%s] is full
+  notAgainGame: §4The game is still on!
+StunMessage:
+  CreateLobby: §3You have created a Lobby named - %s
+  ExitLobby: §3You left the lobby
+  deleteLobb1: §3Lobby deleted
+  RemoveForLobby: §3Player [%s] - removed from lobby
+  ActiveLobbys: §3Active Lobby
+  GameAgain: §3You have restarted the game!
+  OwnerClear: §3You have removed all regular players!
+  OwnerClersForPlayer: §3Admin clears the lobby!
+  joinLobby: §3Player [%s] joined the lobby
+  GameStart: §3The death game begins
+  GameStart1: §3left before the game
+  GameStart2: §3The deadly game has begun
+  GameOver: §3Game over, after the game was killed [%s], Survived [%s]
+  KickPlayer: §3Player [%s] left the lobby
+  DeathGame: §3Player [%s] - a bullet fell out of a revolver
+  GameSave: §3Player [%s] - very lucky and he survived
+  MessageAgain: §3To restart the game just click
+  MessageAgain1: §3Restart the game
+  ActiveLobbys1: §3There are no active lobbies
+  RestartMessage: §3If you want to reset the lobby just click
+  RestartMessage1: §3Removing all players
+HelpMessage: "§4joinLobby - joins a lobby //joinLobby NameLobby\n§cleaveLobby - command\
+  \ to leave the lobby\n§6removeLobby -removes Lobby //removeLobby NameLobby\n§edeleteLobby\
+  \ - deletes your lobby\n§2kickPlayerLobby - kicks a player from the lobby //command\
+  \ PlayerName PlayerName\n§acreateLobby - creates a lobby //command Name MinPlayers\
+  \ MaxPlayers\n§blistLobby - shows active lobbies \n§3again - starts the game again\n\
+  §1deletePlayer - clears the lobby of normal players\n§9Example - /roul createLobby\
+  \ ol 1 2\n§4always at the beginning of the command should be /roul"
